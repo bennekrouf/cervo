@@ -1,0 +1,8 @@
+{
+    "globals" : {
+        "require": false,
+        "console": false,
+        "esnext": true,
+        "module": false
+    }
+}
