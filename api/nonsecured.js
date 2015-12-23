@@ -1,49 +1,52 @@
-'use strict';
+(()=> {
 
-let User = require('./models/user'),
-jwt      = require('jsonwebtoken');
+  'use strict';
 
-function _loadNonSecuredRoutes(app, settings){
+  let User = require('./user'),
+  jwt      = require('jsonwebtoken');
 
-  app.get('/', (req,res) => {
-     res.send('Welcome to the bot API http://localhost:' +settings.port+ '/api');
-  });
+  function _loadNonSecuredRoutes(app, settings){
 
-  // Create a sample user
-  app.get('/setup', (req,res) => {
-    var nick = new User({
-      name: 'Nicky Larson',
-      password: 'password',
-      admin: true
+    app.get('/', (req,res) => {
+       res.send('Welcome to the bot API http://localhost:' +settings.port+ '/api');
     });
 
-    nick.save((err,val) => {
-      if(err) throw err;
-      console.log('User saved success');
-      res.json({success: val});
-    });
-  });
+    // Create a sample user
+    app.get('/setup', (req,res) => {
+      var nick = new User({
+        name: 'Nicky Larson',
+        password: 'password',
+        admin: true
+      });
 
-  app.post('/signup', (req, res) => {
-
-    console.log(req.body);
-
-    let user = new User({
-      name:req.body.name,
-      password:req.body.password
-    });
-
-    var token = jwt.sign(user, app.get('SECRET_VAR'), {expiresIn: 60*60*10});
-    user.save(err => {
-      if(err) throw err;
-      console.log("user created");
-      res.json({
-        success:true,
-        token: token
+      nick.save((err,val) => {
+        if(err) throw err;
+        console.log('User saved success');
+        res.json({success: val});
       });
     });
-  });
 
-}
+    app.post('/signup', (req, res) => {
 
-module.exports = _loadNonSecuredRoutes;
+      console.log(req.body);
+
+      let user = new User({
+        name:req.body.name,
+        password:req.body.password
+      });
+
+      var token = jwt.sign(user, app.get('SECRET_VAR'), {expiresIn: 60*60*10});
+      user.save(err => {
+        if(err) throw err;
+        console.log("user created");
+        res.json({
+          success:true,
+          token: token
+        });
+      });
+    });
+
+  }
+
+  module.exports = _loadNonSecuredRoutes;
+})();
