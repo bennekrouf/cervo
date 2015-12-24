@@ -1,8 +1,13 @@
 # Cervo
 
-## About
+[![Cervo Logo] (lib/img/30152300-m.jpg)]
 
-__Easy-to-use__ node js server. It is abstracting express ___plumbing___. and offers basics but sufficient authentication features based on token. It is intended to be used by IOT.
+__Easy-to-use__ [node](http://nodejs.org) server. It is abstracting express ___plumbing___. and offers basics but sufficient authentication features based on token. It is intended to be used by IOT.
+
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
 
 
 ## Installation
@@ -68,3 +73,14 @@ Endpoint | Description | Example
 - Add secured and non secured APIs
 - Redis plugin
 - Token auto-suges
+
+
+
+[npm-image]: https://img.shields.io/npm/v/cervo.svg
+[npm-url]: https://npmjs.org/package/cervo
+[downloads-image]: https://img.shields.io/npm/dm/cervo.svg
+[downloads-url]: https://npmjs.org/package/cervo
+[travis-image]: https://img.shields.io/travis/bennekrouf/cervo/master.svg?label=linux
+[travis-url]: https://travis-ci.org/bennekrouf/cervo
+[coveralls-image]: https://img.shields.io/coveralls/bennekrouf/cervo/master.svg
+[coveralls-url]: https://coveralls.io/r/bennekrouf/cervo?branch=master
