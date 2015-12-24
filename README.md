@@ -1,6 +1,6 @@
 # Cervo
 
-[![Cervo Logo] (lib/img/30152300-m.jpg)]
+![Cervo Logo] (lib/img/rsz_30152300-m.jpg)
 
 __Easy-to-use__ [node](http://nodejs.org) server. It is abstracting express ___plumbing___. and offers basics but sufficient authentication features based on token. It is intended to be used by IOT.
 
@@ -71,7 +71,6 @@ Endpoint | Description | Example
 - Encapsulate express router to be able to add routes
 - Encapsulate mongoose API to be able to add entities
 - Add secured and non secured APIs
-- Redis plugin
 - Token auto-suges
 
 
