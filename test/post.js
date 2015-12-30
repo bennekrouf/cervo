@@ -31,23 +31,23 @@
         done();
       });
 
-//      cervo.stop();
-//      done();
-
-      http.get('http://localhost:3000/setup', res=>{
-        should(res.statusCode).be.equal(200);
-        cervo.stop();
-        done();
-      }, error=>{
-        console.log(`http get error ${error}`);
-      });
-
-      //  request.post('http://localhost:3000/signup?name=toto&password=toto',
-      // // {json: {'name' :'toto', 'password':'toto'}},
-      // function(error, res, body){
-      //   console.log("error:", error);
-      //   // should(res.statusCode).be.equal(500);
+      // http.get('http://localhost:3000/i', res=>{
+      //   should(res.statusCode).be.equal(200);
+      //   cervo.stop();
+      //   done();
+      // }, error=>{
+      //   console.log(`http get error ${error}`);
       // });
+
+       request.post('http://localhost:3000/signup', {json: {'name' :'toto', 'password':'toto'}},
+       (error, res, body) => {
+          cervo.stop();
+//          console.log("error:", error, res, body);
+          // should(res.statusCode).be.equal(500);
+          done();
+      });
+      done();
+
     });
 
   });
