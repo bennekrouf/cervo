@@ -2,18 +2,26 @@
   'use strict';
   var should = require('should');
   var Cervo = require('../');
-  var request = require('supertest')
+  var http = require('http');
 
   describe('GET /api', function(){
-    it('should repond 200 when getting root api', function(done){
+    it('should respond 200 when getting root api', function(done){
       let cervo = new Cervo();
       cervo.run();
-      // request(cervo)
-      //   .get('/')
-        // .set('Accept', 'application/json')
-        // .expect('Content-Type', /json/)
-        // .expect(200, done);
+      http.get('http://localhost:8080/', function (res) {
+        should(res.statusCode).be.equal(200);
+      });
       done();
     });
+
+    it("should respond 404 when getting toto", function(done){
+      let cervo = new Cervo();
+      cervo.run();
+      http.get('http://localhost:8080/toto', function(done){
+        should(res.statusCode).be.equal(404);
+      });
+      done();
+    });
+
   });
 })();

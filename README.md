@@ -57,10 +57,10 @@ cervo.run();
 
 Endpoint | Description | Example
 ---- | --- | ---
-[POST] `/signup` | create new user connexion | signup?name=[user_name]&password=[password]
+[POST] `/signup` | create a connexion | signup?name=[user_name]&password=[password]
 [GET] `/api/` | root of secured endpoints |
 [GET] `/api/users` | list of users |
-[POST] `/api/authenticate` | signin requires *name* and *password* in the request header |
+[POST] `/api/signin` | signin requires *name* and *password* in the request header |
 
 
 

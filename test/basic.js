@@ -14,10 +14,10 @@
     it('should create the server with a specific settings', function(done){
       const sport = 'sport';
       let cervo = new Cervo({
-        port:sport,
-        mongo:'adb'
+        port:3400
       });
-      should(cervo.settings.port).be.equal(sport);
+      console.log(`cervo settings : ${cervo}`);
+      should(cervo.settings.port).be.equal(3400);
       done();
     });
 
