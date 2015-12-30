@@ -35,15 +35,12 @@
 //      done();
 
       http.get('http://localhost:3000/setup', res=>{
-        console.log("res :", res);
         should(res.statusCode).be.equal(200);
         cervo.stop();
         done();
       }, error=>{
         console.log(`http get error ${error}`);
       });
-
-      done();
 
       //  request.post('http://localhost:3000/signup?name=toto&password=toto',
       // // {json: {'name' :'toto', 'password':'toto'}},
