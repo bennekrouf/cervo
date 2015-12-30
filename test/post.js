@@ -5,7 +5,7 @@
   var request = require('request');
   var http = require('http');
 
-  describe('GET /api', function(){
+  describe('GET /api', ()=>{
 
     it("should return a token", function(done){
       let cervo = new Cervo({
@@ -16,16 +16,16 @@
 
       cervo
       .run()
-      .then(function(res,brk){
+      .then((res,brk)=>{
         console.log("After the run", res, brk);
         cervo.stop();
         done();
-      }, function(error){
+      }, (error) => {
         console.log("Error in run return:", error);
         cervo.stop();
         done();
       })
-      .catch(function(error){
+      .catch((error)=>{
         console.log("In the catch:", error);
         cervo.stop();
         done();
@@ -34,12 +34,12 @@
 //      cervo.stop();
 //      done();
 
-      http.get('http://localhost:3000/setup', function (res) {
+      http.get('http://localhost:3000/setup', res=>{
         console.log("res :", res);
         should(res.statusCode).be.equal(200);
         cervo.stop();
         done();
-      }, function(error){
+      }, error=>{
         console.log(`http get error ${error}`);
       });
 
