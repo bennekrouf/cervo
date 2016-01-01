@@ -79,7 +79,7 @@ Endpoint | Description | Example
 [npm-url]: https://npmjs.org/package/cervo
 [downloads-image]: https://img.shields.io/npm/dm/cervo.svg
 [downloads-url]: https://npmjs.org/package/cervo
-[travis-image]: https://img.shields.io/travis/bennekrouf/cervo/master.svg?label=linux
+[travis-image]: https://img.shields.io/travis/bennekrouf/cervo/master.svg?label=build
 [travis-url]: https://travis-ci.org/bennekrouf/cervo
 [coveralls-image]: https://img.shields.io/coveralls/bennekrouf/cervo/master.svg
-[coveralls-url]: https://coveralls.io/r/bennekrouf/cervo?branch=master
+[coveralls-url]: https://coveralls.io/github/bennekrouf/cervo?branch=master

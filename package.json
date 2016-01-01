@@ -1,12 +1,8 @@
 {
   "name": "cervo",
-  "version": "1.0.3",
+  "version": "1.0.4.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/*",
-    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bennekrouf/cervo.git"
@@ -28,5 +24,10 @@
     "mocha": "^2.3.4",
     "request": "^2.67.0",
     "should": "^8.0.2"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./test/*",
+    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha"
   }
 }
