@@ -1,7 +1,5 @@
 # Cervo
 
-[![Cervo Logo] (lib/img/rsz_30152300-m.jpg)]
-
 __Easy-to-use__ [node](http://nodejs.org) server. It is abstracting express ___plumbing___ and offers basics but sufficient authentication features based on token. It is intended to be used by IOT.
 
 [![NPM Version][npm-image]][npm-url]
