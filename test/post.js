@@ -11,11 +11,9 @@
 
       let cervo = new Cervo({
           port: '3001'
-          // ,secret : 'bennekrouf',
-        	// mongo : 'mongodb://admin:admin@waffle.modulusmongo.net:27017/iseM9apu'
         });
 
-      cervo.pget('/titi', function(req, res){
+      cervo.get('/titi', function(req, res){
         console.log(`Callback pget`);
         res.json({success : true});
       });
