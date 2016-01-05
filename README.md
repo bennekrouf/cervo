@@ -1,6 +1,6 @@
 # Cervo
 
-__Easy-to-use__ [node](http://nodejs.org) server. It is abstracting express plumbing and offers basic but sufficient authentication features based on token. It is intended to be used by IOT.
+__Easy-to-use__ [nodejs](http://nodejs.org) server. It is abstracting express plumbing and offers basic but sufficient authentication features based on token. It is intended to be used by IOT.
 You can easily add custom endpoints, public or secured ones.
 
 Code and examples uses ES6 syntaxes.
