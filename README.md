@@ -1,11 +1,15 @@
 # Cervo
 
-__Easy-to-use__ [node](http://nodejs.org) server. It is abstracting express ___plumbing___ and offers basics but sufficient authentication features based on token. It is intended to be used by IOT.
+__Easy-to-use__ [node](http://nodejs.org) server. It is abstracting express plumbing and offers basic but sufficient authentication features based on token. It is intended to be used by IOT.
+You can easily add custom endpoints, public or secured ones.
+
+Code and examples uses ES6 syntaxes.
+
+
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build][travis-image]][travis-url]
-[![Coverage Status](https://coveralls.io/repos/bennekrouf/cervo/badge.svg?branch=master&service=github)](https://coveralls.io/github/bennekrouf/cervo?branch=master)
 
 
 ## Installation
@@ -24,7 +28,9 @@ let cervo = new Cervo();
 cervo.run();
 ```
 
+
 ### Starting on a specific PORT
+
 ```javascript
 let cervo = new Cervo({
   port: 3000
@@ -32,7 +38,9 @@ let cervo = new Cervo({
 cervo.run();
 ```
 
+
 ### Using authentication
+
 It is based on token. Credentials (users/passwords) are stored in a database.
 The workflow is the following :
 
@@ -42,6 +50,7 @@ The workflow is the following :
 
 
 #### Store credentials in mongodb
+
 ```javascript
 let cervo = new Cervo({
 	database : 'mongodb://[user]:[password]@[mongo_provider]:[mongo_port]/[db_id]'
@@ -51,25 +60,47 @@ cervo.run();
 ```
 
 
-## API
+## Core API
 
 Endpoint | Description | Example
 ---- | --- | ---
-[POST] `/signup` | create a connexion | signup?name=[user_name]&password=[password]
-[GET] `/api/` | root of secured endpoints |
-[GET] `/api/users` | list of users |
-[POST] `/api/signin` | signin requires *name* and *password* in the request header |
+[POST] `/public/authenticate` | create a user/connexion | signup?name=[user_name]&password=[password]
+[GET] `/secured/` | root of secured endpoints |
+[GET] `/secured/users` | list of users |
+[POST] `/secured/signin` | signin requires *name* and *password* in the request header |
 
+## Custom endpoints
 
+You can define your own endpoints :
+
+```javascript
+let cervo = new Cervo({});
+cervo.get('/books', function(){
+  res.send(...); // Add the code that get the list of books
+});
+cervo.run();
+
+```
+
+By default custom endpoints are public and are hosted under /public.
+
+### Secured endpoints
+
+You can define secured endpoints only available for authentified clients :
+
+```javascript
+let cervo = new Cervo({});
+cervo.pget('/books', function(){ // pget for private get
+  res.send(...); // Add the code that get the list of books
+});
+cervo.run();
+```
 
 
 ## Todo
-- Unit test
 - Embedded sqlite for storing users
-- Encapsulate express router to be able to add routes
 - Encapsulate mongoose API to be able to add entities
-- Add secured and non secured APIs
-- Token auto-suges
+- Auto-sugested token for marketing usages
 
 
 
