@@ -90,7 +90,7 @@ You can define secured endpoints only available for authentified clients :
 
 ```javascript
 let cervo = new Cervo({});
-cervo.pget('/books', function(){ // pget for private get
+cervo.sget('/books', function(){ // pget for private get
   res.send(...); // Add the code that get the list of books
 });
 cervo.run();
